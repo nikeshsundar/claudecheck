@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Usage</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-wrap">
+      <h1>Claude Usage</h1>
+      <p class="lead">Official counters first, with context/prompt token estimation as fallback.</p>
+
+      <div id="usageValue" class="usage-value">Loading...</div>
+      <p id="usageMeta" class="meta">Preparing usage signals...</p>
+
+      <div class="field-grid">
+        <label>
+          <span>Limit (message units)</span>
+          <input id="maxMessages" type="number" min="1" max="1000" step="1" />
+        </label>
+
+        <label>
+          <span>Window (hours)</span>
+          <input id="windowHours" type="number" min="1" max="24" step="1" />
+        </label>
+
+        <label>
+          <span>Token unit per message</span>
+          <input id="tokenUnitPerMessage" type="number" min="400" max="20000" step="100" />
+        </label>
+
+        <label>
+          <span>Warning (%)</span>
+          <input id="warnAtPercent" type="number" min="50" max="100" step="1" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="saveBtn" class="primary" type="button">Save</button>
+        <button id="resetBtn" type="button">Reset Estimate</button>
+      </div>
+
+      <button id="openOptions" class="linklike" type="button">Advanced Options</button>
+      <p id="status" class="status"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

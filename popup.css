@@ -1,0 +1,118 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 310px;
+  background:
+    radial-gradient(circle at 12% -14%, rgba(200, 121, 70, 0.2) 0%, rgba(200, 121, 70, 0) 40%),
+    radial-gradient(circle at 90% -16%, rgba(91, 150, 126, 0.18) 0%, rgba(91, 150, 126, 0) 36%),
+    linear-gradient(180deg, #1f1f1d 0%, #171716 100%);
+  font-family: "Avenir Next", "Segoe UI", "Noto Sans", sans-serif;
+  color: #ece6de;
+}
+
+.popup-wrap {
+  padding: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.lead {
+  margin: 6px 0 10px;
+  font-size: 12px;
+  color: #bfb5aa;
+}
+
+.usage-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 4px;
+  color: #f0e4d7;
+}
+
+.meta {
+  margin: 6px 0 10px;
+  font-size: 12px;
+  color: #b4aba2;
+}
+
+.field-grid {
+  display: grid;
+  gap: 8px;
+}
+
+label span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #c3b9ae;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(226, 180, 147, 0.26);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+  color: #ece6de;
+  background: rgba(24, 24, 24, 0.9);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(229, 163, 108, 0.72);
+  box-shadow: 0 0 0 3px rgba(213, 134, 88, 0.2);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+button {
+  border: 1px solid rgba(226, 180, 147, 0.26);
+  border-radius: 8px;
+  background: rgba(44, 42, 40, 0.96);
+  color: #ece6de;
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 12px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(229, 163, 108, 0.65);
+}
+
+button.primary {
+  border-color: #bb6f44;
+  background: linear-gradient(125deg, #bb6f44 0%, #d58658 100%);
+  color: #fff7f1;
+}
+
+.linklike {
+  margin-top: 10px;
+  border: none;
+  padding: 0;
+  color: #edb893;
+  background: transparent;
+  text-decoration: underline;
+}
+
+.status {
+  min-height: 16px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #f0c6a8;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Usage Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="options-wrap">
+      <h1>Claude Web Usage Bar</h1>
+      <p class="lead">
+        Uses Claude official counters when available, then falls back to context + prompt token estimation.
+      </p>
+
+      <section class="panel">
+        <h2>Usage Window</h2>
+
+        <label>
+          <span>Message units per window</span>
+          <input id="maxMessages" type="number" min="1" max="1000" step="1" />
+        </label>
+
+        <label>
+          <span>Window size (hours)</span>
+          <input id="windowHours" type="number" min="1" max="24" step="1" />
+        </label>
+
+        <label>
+          <span>Warning threshold (%)</span>
+          <input id="warnAtPercent" type="number" min="50" max="100" step="1" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Estimator Math</h2>
+
+        <label>
+          <span>Model profile</span>
+          <select id="modelProfile">
+            <option value="sonnet">Sonnet (200K context)</option>
+            <option value="opus">Opus (200K context)</option>
+            <option value="haiku">Haiku (200K context)</option>
+            <option value="custom">Custom</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Context window tokens</span>
+          <input id="contextWindowTokens" type="number" min="8000" max="1500000" step="1000" />
+        </label>
+
+        <label>
+          <span>Token unit per message</span>
+          <input id="tokenUnitPerMessage" type="number" min="400" max="20000" step="100" />
+        </label>
+
+        <label class="inline-check">
+          <input id="useEstimatorFallback" type="checkbox" />
+          <span>Use estimator fallback when official counters are unavailable</span>
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Status</h2>
+        <p id="counterInfo" class="counter-info">Loading...</p>
+
+        <div class="actions">
+          <button id="saveBtn" class="primary" type="button">Save Settings</button>
+          <button id="resetBtn" type="button">Reset Estimated Window</button>
+        </div>
+      </section>
+
+      <p id="status" class="status"></p>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
